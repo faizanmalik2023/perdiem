@@ -28,6 +28,12 @@ npm run test:coverage
 
 # Run tests in CI mode
 npm run test:ci
+
+# Run a specific test file
+npm test -- __tests__/simple.test.js
+
+# Run tests matching a pattern
+npm test -- --testNamePattern="timezone"
 ```
 
 ### Test Coverage

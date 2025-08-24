@@ -45,6 +45,45 @@ jest.mock('react-native-reanimated', () => {
 // Mock react-native-gesture-handler
 jest.mock('react-native-gesture-handler', () => {});
 
+// Mock react-native-modal
+jest.mock('react-native-modal', () => {
+  const React = require('react');
+  return ({ children, ...props }) => React.createElement('Modal', props, children);
+});
+
+// Mock react-native-safe-area-context
+jest.mock('react-native-safe-area-context', () => ({
+  SafeAreaProvider: ({ children }) => children,
+  useSafeAreaInsets: () => ({ top: 0, right: 0, bottom: 0, left: 0 }),
+}));
+
+// Mock react-native-screens
+jest.mock('react-native-screens', () => ({
+  enableScreens: jest.fn(),
+}));
+
+// Mock @expo/vector-icons
+jest.mock('@expo/vector-icons', () => ({
+  Ionicons: 'Ionicons',
+  MaterialIcons: 'MaterialIcons',
+}));
+
+// Mock react-native-vector-icons
+jest.mock('react-native-vector-icons/Ionicons', () => 'Ionicons');
+jest.mock('react-native-vector-icons/MaterialIcons', () => 'MaterialIcons');
+
+// Mock react-native-webview
+jest.mock('react-native-webview', () => 'WebView');
+
+// Mock react-native-web
+jest.mock('react-native-web', () => ({
+  View: 'View',
+  Text: 'Text',
+  TouchableOpacity: 'TouchableOpacity',
+  ScrollView: 'ScrollView',
+  Modal: 'Modal',
+}));
+
 // Global fetch mock
 global.fetch = jest.fn();
 
@@ -54,7 +93,8 @@ beforeAll(() => {
   console.error = (...args) => {
     if (
       typeof args[0] === 'string' &&
-      args[0].includes('Warning: ReactDOM.render is no longer supported')
+      (args[0].includes('Warning: ReactDOM.render is no longer supported') ||
+       args[0].includes('Warning: Animated: `useNativeDriver` was not specified'))
     ) {
       return;
     }

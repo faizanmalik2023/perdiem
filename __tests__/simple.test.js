@@ -1,6 +1,5 @@
-
 // Simple test to verify Jest is working
-describe('Basic App Tests', () => {
+describe('Simple Tests', () => {
   test('should pass basic test', () => {
     expect(1 + 1).toBe(2);
   });
