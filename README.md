@@ -2,6 +2,10 @@
 
 A React Native/Expo application with comprehensive authentication, location services, store management, and appointment scheduling capabilities.
 
+## 🎥 Demo Video
+
+**Loom Video Link**: https://www.loom.com/share/88115ea058124062a39e6f992b71bf2f?sid=4e9b8f69-4c55-4dcd-9e04-ae7be02333c2 
+
 ## 🚀 Features
 
 - **🔐 Dual Authentication**: Firebase Google Sign-In + Backend Email/Password
@@ -55,18 +59,7 @@ cd test-app
 npm install
 ```
 
-### 2. Environment Configuration
-
-#### Firebase Setup (for Google Sign-In)
-1. Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
-2. Enable Authentication with Google Sign-In
-3. Add your app to Firebase project
-4. Update `services/GoogleAuthService.ts` with your Firebase configuration:
-   ```typescript
-   const GOOGLE_CLIENT_ID = 'your-google-client-id';
-   ```
-
-#### Backend API Configuration
+### 2. Backend API Configuration
 The app is configured to use the deployed backend at:
 ```
 https://coding-challenge-pd-1a25b1a14f34.herokuapp.com
@@ -180,24 +173,16 @@ test-app/
 
 ### Limitations
 
-1. **Expo Go Restrictions**: Some native features may be limited in Expo Go
-2. **Google Sign-In**: Requires proper Firebase configuration and Google Cloud Console setup
-3. **Location Accuracy**: Depends on device GPS and network location services
-4. **Notification Timing**: Push notifications may be delayed on some devices
-5. **Offline Mode**: No offline functionality - requires internet connection
-6. **Browser Limitations**: Some features may not work in web browser
+1. **Location Accuracy**: Depends on device GPS and network location services
+2. **Notification Timing**: Push notifications may be delayed on some devices
+3. **Offline Mode**: No offline functionality - requires internet connection
+4. **Browser Limitations**: Some features may not work in web browser
 
 ### Known Issues
 
-1. **iOS Simulator**: Google Sign-In may not work in iOS Simulator
 2. **Expo Go**: Some native modules may have limitations
 3. **Development Build**: Requires development build for full native functionality
 
-## 🎥 Demo Video
-
-**Loom Video Link**: [Add your Loom video link here]
-
-*Note: Replace the placeholder with your actual Loom video URL once recorded.*
 
 ## 🧪 Testing Checklist
 
