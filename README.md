@@ -19,6 +19,27 @@ A React Native/Expo application with comprehensive authentication, location serv
 - npm or yarn
 - Expo CLI (`npm install -g @expo/cli`)
 - iOS Simulator (for iOS testing) or Android Emulator
+
+## Environment Variables
+
+This project uses environment variables for sensitive configuration. Create a `.env` file in the root directory with the following variables:
+
+```bash
+# Firebase Configuration
+FIREBASE_API_KEY=your_api_key_here
+FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+FIREBASE_APP_ID=your_app_id
+FIREBASE_MEASUREMENT_ID=your_measurement_id
+
+# Google Sign-In Configuration
+GOOGLE_WEB_CLIENT_ID=your_web_client_id.apps.googleusercontent.com
+GOOGLE_IOS_CLIENT_ID=your_ios_client_id.apps.googleusercontent.com
+```
+
+**Important**: Never commit your `.env` file to version control. The `.env.example` file shows the required structure without exposing actual values.
 - Expo Go app (for device testing)
 
 ## 🛠️ Setup Instructions

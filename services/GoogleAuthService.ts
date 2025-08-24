@@ -8,10 +8,10 @@ export class GoogleAuthService {
       console.log('Initializing Google Sign-In...');
       
       GoogleSignin.configure({
-        webClientId: '569189944977-o91447el70onqoc62jktt4vpt05nu3e7.apps.googleusercontent.com',
+        webClientId: process.env.GOOGLE_WEB_CLIENT_ID || '569189944977-o91447el70onqoc62jktt4vpt05nu3e7.apps.googleusercontent.com',
         // For iOS development, you might need to create a separate iOS client ID
         // in Google Cloud Console under APIs & Services > Credentials
-        iosClientId: '569189944977-fcjp8imqc5qntf6n30v26883ftftetb7.apps.googleusercontent.com',
+        iosClientId: process.env.GOOGLE_IOS_CLIENT_ID || '569189944977-fcjp8imqc5qntf6n30v26883ftftetb7.apps.googleusercontent.com',
         offlineAccess: true,
         forceCodeForRefreshToken: true,
       });

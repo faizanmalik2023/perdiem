@@ -4,13 +4,13 @@ import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStat
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDd9jmHfcPU-KJctFe61S8DLNsqzm35OoI",
-  authDomain: "perdiem-745d2.firebaseapp.com",
-  projectId: "perdiem-745d2",
-  storageBucket: "perdiem-745d2.firebasestorage.app",
-  messagingSenderId: "569189944977",
-  appId: "1:569189944977:web:8afbf73e58f49edcd73930",
-  measurementId: "G-E30F397PBE"
+  apiKey: process.env.FIREBASE_API_KEY || "AIzaSyDd9jmHfcPU-KJctFe61S8DLNsqzm35OoI",
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN || "perdiem-745d2.firebaseapp.com",
+  projectId: process.env.FIREBASE_PROJECT_ID || "perdiem-745d2",
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET || "perdiem-745d2.firebasestorage.app",
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID || "569189944977",
+  appId: process.env.FIREBASE_APP_ID || "1:569189944977:web:8afbf73e58f49edcd73930",
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID || "G-E30F397PBE"
 };
 
 // Initialize Firebase
